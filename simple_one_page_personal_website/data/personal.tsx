@@ -1,5 +1,6 @@
 // Enter your personal information here
 
+const firstName = "First";
+const lastName = "Last";
 
-const firstName = ""
-const lastName = ""
+export { firstName, lastName };

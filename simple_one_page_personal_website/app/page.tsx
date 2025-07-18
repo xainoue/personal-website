@@ -23,6 +23,8 @@ import {
   Palette,
   Globe
 } from 'lucide-react';
+import { firstName, lastName } from '@/data/personal';
+
 
 export default function PersonalWebsite() {
   const [scrollY, setScrollY] = useState(0);
@@ -44,7 +46,7 @@ export default function PersonalWebsite() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-slate-800">
-              Your Name
+              {firstName} {lastName}
             </div>
             <div className="hidden md:flex space-x-8">
               {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((item) => (
