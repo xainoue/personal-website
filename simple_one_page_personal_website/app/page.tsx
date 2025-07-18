@@ -29,9 +29,30 @@ import {
   Palette,
   Globe,
 } from "lucide-react";
-import { firstName, heroSectionText, lastName } from "@/data/personal";
-import { githubURL, linkedinURL, emailAddress } from "@/data/socials";
-import { aboutMeText, aboutMeTitle, backgroundText, backgroundTitle, colloborationText, colloborationTitle, goalsText, goalsTitle } from "@/data/about";
+import {
+  firstName,
+  heroSectionText,
+  lastName,
+  personalSlogan,
+} from "@/data/personal";
+import {
+  githubURL,
+  linkedinURL,
+  emailAddress,
+  phoneNumber,
+  location,
+  orbitviewURL,
+} from "@/data/socials";
+import {
+  aboutMeText,
+  aboutMeTitle,
+  backgroundText,
+  backgroundTitle,
+  colloborationText,
+  colloborationTitle,
+  goalsText,
+  goalsTitle,
+} from "@/data/about";
 
 export default function PersonalWebsite() {
   const [scrollY, setScrollY] = useState(0);
@@ -153,7 +174,9 @@ export default function PersonalWebsite() {
       <section id="about" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">{aboutMeTitle}</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              {aboutMeTitle}
+            </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               {aboutMeText}
             </p>
@@ -168,9 +191,7 @@ export default function PersonalWebsite() {
                 <CardTitle>{backgroundTitle}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">
-                  {backgroundText}
-                </p>
+                <p className="text-slate-600">{backgroundText}</p>
               </CardContent>
             </Card>
 
@@ -182,9 +203,7 @@ export default function PersonalWebsite() {
                 <CardTitle>{colloborationTitle}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">
-                  {colloborationText}
-                </p>
+                <p className="text-slate-600">{colloborationText}</p>
               </CardContent>
             </Card>
 
@@ -196,9 +215,7 @@ export default function PersonalWebsite() {
                 <CardTitle>{goalsTitle}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">
-                  {goalsText}
-                </p>
+                <p className="text-slate-600">{goalsText}</p>
               </CardContent>
             </Card>
           </div>
@@ -491,7 +508,7 @@ export default function PersonalWebsite() {
             My OrbitView Profile
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Discover more about my professional journey through my OrbitView
+            Discover WAY more about my professional journey through my OrbitView
             profile
           </p>
 
@@ -507,17 +524,28 @@ export default function PersonalWebsite() {
                     My OrbitView profile showcases my career narrative,
                     achievements, and professional growth in an interactive and
                     engaging format.
+                    <strong>
+                      {" "}
+                      It can answer some questions about my resume, if you have
+                      any...
+                    </strong>
                   </p>
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  <div
+                    onClick={() => {
+                      window.open(orbitviewURL, "_blank");
+                    }}
                   >
-                    View OrbitView Profile{" "}
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
+                    <Button
+                      size="lg"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    >
+                      View OrbitView Profile{" "}
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
                 <p className="text-sm text-slate-500">
-                  Generated with AI-powered storytelling and branding tools
+                  AI-powered storytelling and branding tools
                 </p>
               </div>
             </CardContent>
@@ -547,22 +575,24 @@ export default function PersonalWebsite() {
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 text-blue-600 mr-4" />
                     <a
-                      href="mailto:your.email@example.com"
+                      href={`mailto:${emailAddress}`}
                       className="text-slate-700 hover:text-blue-600 transition-colors"
                     >
-                      your.email@example.com
+                      {emailAddress}
                     </a>
                   </div>
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-blue-600 mr-4" />
-                    <span className="text-slate-700">+1 (555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-blue-600 mr-4" />
-                    <span className="text-slate-700">
-                      Your City, Your Country
-                    </span>
-                  </div>
+                  {phoneNumber && (
+                    <div className="flex items-center">
+                      <Phone className="w-5 h-5 text-blue-600 mr-4" />
+                      <span className="text-slate-700">{phoneNumber}</span>
+                    </div>
+                  )}
+                  {location && (
+                    <div className="flex items-center">
+                      <MapPin className="w-5 h-5 text-blue-600 mr-4" />
+                      <span className="text-slate-700">{location}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -572,19 +602,19 @@ export default function PersonalWebsite() {
                 </h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com/yourusername"
+                    href={githubURL}
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href={linkedinURL}
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="mailto:your.email@example.com"
+                    href={`mailto:${emailAddress}`}
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Mail className="w-5 h-5" />
@@ -593,7 +623,7 @@ export default function PersonalWebsite() {
               </div>
             </div>
 
-            <Card className="border-slate-200">
+            {/* <Card className="border-slate-200">
               <CardHeader>
                 <CardTitle>Send me a message</CardTitle>
                 <CardDescription>
@@ -647,7 +677,7 @@ export default function PersonalWebsite() {
                   Send Message
                 </Button>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -656,14 +686,14 @@ export default function PersonalWebsite() {
       <footer className="py-12 px-6 bg-slate-900 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="text-2xl font-bold mb-4">Your Name</div>
-            <p className="text-slate-400 mb-6">
-              Building amazing digital experiences, one project at a time.
-            </p>
+            <div className="text-2xl font-bold mb-4">
+              {firstName} {lastName}
+            </div>
+            <p className="text-slate-400 mb-6">{personalSlogan}</p>
             <Separator className="my-6 bg-slate-700" />
             <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
               <p className="text-slate-400 text-sm">
-                © 2024 Your Name. All rights reserved.
+                © 2024 {firstName} {lastName}. All rights reserved.
               </p>
               <p className="text-slate-400 text-sm">
                 Built with Next.js, deployed on Vercel
