@@ -4,4 +4,6 @@ const githubURL = "";
 const linkedinURL = "";
 const emailAddress = "";
 
-export { githubURL, linkedinURL, emailAddress };
+const orbitviewURL = ""
+
+export { githubURL, linkedinURL, emailAddress, orbitviewURL };
