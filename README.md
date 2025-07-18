@@ -58,8 +58,8 @@ Edit the files in [`/simple_one_page_personal_website/data/`](./simple_one_page_
 - `socials.tsx` — Social media, email, phone, location, OrbitView profile
 
 ### 2. Live Preview & Edit
-- Use [Cursor](https://www.cursor.so/) for a seamless editing experience — see your changes live as you code!
 - You can also use any code editor of your choice.
+- You can also use [Cursor](https://www.cursor.so/) for a seamless editing experience — see your changes live as you code!
 
 ### 3. Deploy Your Website
 - Deploy for free with [Vercel](https://vercel.com/) (recommended for Next.js)
