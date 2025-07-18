@@ -1,17 +1,23 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { 
-  ArrowRight, 
-  ExternalLink, 
-  Github, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import {
+  ArrowRight,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
   Phone,
   Download,
   Star,
@@ -21,22 +27,23 @@ import {
   Code,
   Database,
   Palette,
-  Globe
-} from 'lucide-react';
-import { firstName, lastName } from '@/data/personal';
-
+  Globe,
+} from "lucide-react";
+import { firstName, heroSectionText, lastName } from "@/data/personal";
+import { githubURL, linkedinURL, emailAddress } from "@/data/socials";
+import { aboutMeText, aboutMeTitle, backgroundText, backgroundTitle, colloborationText, colloborationTitle, goalsText, goalsTitle } from "@/data/about";
 
 export default function PersonalWebsite() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -49,15 +56,17 @@ export default function PersonalWebsite() {
               {firstName} {lastName}
             </div>
             <div className="hidden md:flex space-x-8">
-              {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-slate-600 hover:text-slate-900 transition-colors font-medium"
-                >
-                  {item}
-                </button>
-              ))}
+              {["About", "Projects", "Experience", "Skills", "Contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className="text-slate-600 hover:text-slate-900 transition-colors font-medium"
+                  >
+                    {item}
+                  </button>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -74,26 +83,26 @@ export default function PersonalWebsite() {
                   Available for new opportunities
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  Hi, I'm{' '}
+                  Hi, I'm{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Your Name
+                    {firstName} {lastName}
                   </span>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  A passionate [Your Title] who loves creating innovative solutions and building amazing digital experiences. Specialized in [Your Specialization].
+                  {heroSectionText}
                 </p>
               </div>
-              
+
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-blue-600 hover:bg-blue-700"
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => scrollToSection("projects")}
                 >
                   View My Work <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   className="border-slate-300 hover:bg-slate-50"
                 >
@@ -102,20 +111,29 @@ export default function PersonalWebsite() {
               </div>
 
               <div className="flex items-center space-x-6 pt-4">
-                <a href="https://github.com/yourusername" className="text-slate-600 hover:text-slate-900 transition-colors">
+                <a
+                  href={githubURL}
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                >
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="https://linkedin.com/in/yourusername" className="text-slate-600 hover:text-slate-900 transition-colors">
+                <a
+                  href={linkedinURL}
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                >
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="mailto:your.email@example.com" className="text-slate-600 hover:text-slate-900 transition-colors">
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                >
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
             </div>
 
             <div className="relative">
-              <div 
+              <div
                 className="relative z-10 transform transition-transform duration-300"
                 style={{ transform: `translateY(${scrollY * 0.1}px)` }}
               >
@@ -135,10 +153,9 @@ export default function PersonalWebsite() {
       <section id="about" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">About Me</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">{aboutMeTitle}</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              I'm a dedicated professional with a passion for innovation and continuous learning. 
-              Here's a glimpse into my journey and what drives me.
+              {aboutMeText}
             </p>
           </div>
 
@@ -148,13 +165,11 @@ export default function PersonalWebsite() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Trophy className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Background</CardTitle>
+                <CardTitle>{backgroundTitle}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  With [X] years of experience in [Your Field], I've worked on diverse projects 
-                  ranging from [Project Type 1] to [Project Type 2], always focusing on delivering 
-                  exceptional results.
+                  {backgroundText}
                 </p>
               </CardContent>
             </Card>
@@ -164,13 +179,11 @@ export default function PersonalWebsite() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Collaboration</CardTitle>
+                <CardTitle>{colloborationTitle}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  I thrive in collaborative environments and believe that the best solutions 
-                  come from diverse perspectives and open communication. I love mentoring and 
-                  learning from others.
+                  {colloborationText}
                 </p>
               </CardContent>
             </Card>
@@ -180,12 +193,11 @@ export default function PersonalWebsite() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Goals</CardTitle>
+                <CardTitle>{goalsTitle}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  I'm always looking for opportunities to grow, learn new technologies, 
-                  and contribute to meaningful projects that make a positive impact in the world.
+                  {goalsText}
                 </p>
               </CardContent>
             </Card>
@@ -197,7 +209,9 @@ export default function PersonalWebsite() {
       <section id="projects" className="py-20 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Featured Projects</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Featured Projects
+            </h2>
             <p className="text-xl text-slate-600">
               A showcase of my recent work and the impact I've made
             </p>
@@ -207,49 +221,64 @@ export default function PersonalWebsite() {
             {[
               {
                 title: "Project Name 1",
-                description: "A comprehensive description of your amazing project, highlighting the key features, technologies used, and the impact it made.",
+                description:
+                  "A comprehensive description of your amazing project, highlighting the key features, technologies used, and the impact it made.",
                 image: "🚀",
                 tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
                 github: "https://github.com/yourusername/project1",
-                live: "https://project1.vercel.app"
+                live: "https://project1.vercel.app",
               },
               {
                 title: "Project Name 2",
-                description: "Another fantastic project that demonstrates your skills and creativity. Explain the challenges you faced and how you solved them.",
+                description:
+                  "Another fantastic project that demonstrates your skills and creativity. Explain the challenges you faced and how you solved them.",
                 image: "🎨",
                 tags: ["Python", "Machine Learning", "TensorFlow", "API"],
                 github: "https://github.com/yourusername/project2",
-                live: "https://project2.vercel.app"
+                live: "https://project2.vercel.app",
               },
               {
                 title: "Project Name 3",
-                description: "A third project showcasing different aspects of your expertise. This could be a mobile app, web application, or any other type of project.",
+                description:
+                  "A third project showcasing different aspects of your expertise. This could be a mobile app, web application, or any other type of project.",
                 image: "📱",
                 tags: ["Vue.js", "Node.js", "MongoDB", "Express"],
                 github: "https://github.com/yourusername/project3",
-                live: "https://project3.vercel.app"
+                live: "https://project3.vercel.app",
               },
               {
                 title: "Project Name 4",
-                description: "Your fourth featured project. Remember to include metrics and results where possible to show the impact of your work.",
+                description:
+                  "Your fourth featured project. Remember to include metrics and results where possible to show the impact of your work.",
                 image: "💡",
                 tags: ["Flutter", "Dart", "Firebase", "API Integration"],
                 github: "https://github.com/yourusername/project4",
-                live: "https://project4.vercel.app"
-              }
+                live: "https://project4.vercel.app",
+              },
             ].map((project, index) => (
-              <Card key={index} className="border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <Card
+                key={index}
+                className="border-slate-200 hover:shadow-xl transition-all duration-300 group"
+              >
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="text-4xl mb-4">{project.image}</div>
                     <div className="flex space-x-2">
                       <Button size="sm" variant="outline" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="w-4 h-4" />
                         </a>
                       </Button>
                       <Button size="sm" asChild>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </Button>
@@ -265,7 +294,11 @@ export default function PersonalWebsite() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="bg-blue-100 text-blue-700">
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="bg-blue-100 text-blue-700"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -281,7 +314,9 @@ export default function PersonalWebsite() {
       <section id="experience" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Experience</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Experience
+            </h2>
             <p className="text-xl text-slate-600">
               My professional journey and key achievements
             </p>
@@ -293,35 +328,38 @@ export default function PersonalWebsite() {
                 company: "Company Name",
                 position: "Your Position",
                 period: "2023 - Present",
-                description: "Brief description of your role and key responsibilities. Include specific achievements and metrics where possible.",
+                description:
+                  "Brief description of your role and key responsibilities. Include specific achievements and metrics where possible.",
                 achievements: [
                   "Increased efficiency by 40% through process optimization",
                   "Led a team of 5 developers on multiple projects",
-                  "Implemented new technologies that reduced costs by 25%"
-                ]
+                  "Implemented new technologies that reduced costs by 25%",
+                ],
               },
               {
                 company: "Previous Company",
                 position: "Previous Position",
                 period: "2021 - 2023",
-                description: "Another role description highlighting your growth and contributions to the organization.",
+                description:
+                  "Another role description highlighting your growth and contributions to the organization.",
                 achievements: [
                   "Developed and launched 3 major features",
                   "Improved user satisfaction scores by 30%",
-                  "Mentored junior developers and interns"
-                ]
+                  "Mentored junior developers and interns",
+                ],
               },
               {
                 company: "Earlier Company",
                 position: "Earlier Position",
                 period: "2019 - 2021",
-                description: "Your earlier experience and how it shaped your career path.",
+                description:
+                  "Your earlier experience and how it shaped your career path.",
                 achievements: [
                   "Successfully completed certification in [Technology]",
                   "Contributed to open-source projects",
-                  "Participated in hackathons and coding competitions"
-                ]
-              }
+                  "Participated in hackathons and coding competitions",
+                ],
+              },
             ].map((exp, index) => (
               <Card key={index} className="border-slate-200">
                 <CardHeader>
@@ -359,7 +397,9 @@ export default function PersonalWebsite() {
       <section id="skills" className="py-20 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Skills & Expertise</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Skills & Expertise
+            </h2>
             <p className="text-xl text-slate-600">
               Technologies and tools I work with
             </p>
@@ -370,25 +410,46 @@ export default function PersonalWebsite() {
               {
                 category: "Frontend",
                 icon: <Code className="w-6 h-6" />,
-                skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"]
+                skills: [
+                  "React",
+                  "Next.js",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "Vue.js",
+                ],
               },
               {
                 category: "Backend",
                 icon: <Database className="w-6 h-6" />,
-                skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "Express"]
+                skills: [
+                  "Node.js",
+                  "Python",
+                  "PostgreSQL",
+                  "MongoDB",
+                  "Express",
+                ],
               },
               {
                 category: "Design",
                 icon: <Palette className="w-6 h-6" />,
-                skills: ["Figma", "Adobe XD", "UI/UX Design", "Prototyping", "Wireframing"]
+                skills: [
+                  "Figma",
+                  "Adobe XD",
+                  "UI/UX Design",
+                  "Prototyping",
+                  "Wireframing",
+                ],
               },
               {
                 category: "Tools",
                 icon: <Globe className="w-6 h-6" />,
-                skills: ["Git", "Docker", "AWS", "Vercel", "VS Code"]
-              }
+                skills: ["Git", "Docker", "AWS", "Vercel", "VS Code"],
+              },
             ].map((skillGroup, index) => (
-              <Card key={index} className="border-slate-200 hover:shadow-lg transition-all duration-300">
+              <Card
+                key={index}
+                className="border-slate-200 hover:shadow-lg transition-all duration-300"
+              >
                 <CardHeader>
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <div className="text-blue-600">{skillGroup.icon}</div>
@@ -398,14 +459,17 @@ export default function PersonalWebsite() {
                 <CardContent>
                   <div className="space-y-3">
                     {skillGroup.skills.map((skill) => (
-                      <div key={skill} className="flex items-center justify-between">
+                      <div
+                        key={skill}
+                        className="flex items-center justify-between"
+                      >
                         <span className="text-slate-700">{skill}</span>
                         <div className="flex space-x-1">
                           {[1, 2, 3, 4, 5].map((star) => (
                             <div
                               key={star}
                               className={`w-2 h-2 rounded-full ${
-                                star <= 4 ? 'bg-blue-600' : 'bg-slate-200'
+                                star <= 4 ? "bg-blue-600" : "bg-slate-200"
                               }`}
                             />
                           ))}
@@ -423,11 +487,14 @@ export default function PersonalWebsite() {
       {/* OrbitView Integration Section */}
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">My OrbitView Profile</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            My OrbitView Profile
+          </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Discover more about my professional journey through my OrbitView profile
+            Discover more about my professional journey through my OrbitView
+            profile
           </p>
-          
+
           <Card className="border-slate-200 bg-gradient-to-br from-blue-50 to-purple-50">
             <CardContent className="p-8">
               <div className="space-y-6">
@@ -437,11 +504,16 @@ export default function PersonalWebsite() {
                     Enhanced Professional Storytelling
                   </h3>
                   <p className="text-slate-600 mb-6">
-                    My OrbitView profile showcases my career narrative, achievements, and professional 
-                    growth in an interactive and engaging format.
+                    My OrbitView profile showcases my career narrative,
+                    achievements, and professional growth in an interactive and
+                    engaging format.
                   </p>
-                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    View OrbitView Profile <ExternalLink className="ml-2 w-4 h-4" />
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  >
+                    View OrbitView Profile{" "}
+                    <ExternalLink className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
                 <p className="text-sm text-slate-500">
@@ -457,7 +529,9 @@ export default function PersonalWebsite() {
       <section id="contact" className="py-20 px-6 bg-slate-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Let's Connect</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Let's Connect
+            </h2>
             <p className="text-xl text-slate-600">
               I'm always open to discussing new opportunities and collaborations
             </p>
@@ -466,11 +540,16 @@ export default function PersonalWebsite() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Get in touch</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  Get in touch
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 text-blue-600 mr-4" />
-                    <a href="mailto:your.email@example.com" className="text-slate-700 hover:text-blue-600 transition-colors">
+                    <a
+                      href="mailto:your.email@example.com"
+                      className="text-slate-700 hover:text-blue-600 transition-colors"
+                    >
                       your.email@example.com
                     </a>
                   </div>
@@ -480,28 +559,32 @@ export default function PersonalWebsite() {
                   </div>
                   <div className="flex items-center">
                     <MapPin className="w-5 h-5 text-blue-600 mr-4" />
-                    <span className="text-slate-700">Your City, Your Country</span>
+                    <span className="text-slate-700">
+                      Your City, Your Country
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-4">Follow me</h4>
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">
+                  Follow me
+                </h4>
                 <div className="flex space-x-4">
-                  <a 
-                    href="https://github.com/yourusername" 
+                  <a
+                    href="https://github.com/yourusername"
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Github className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="https://linkedin.com/in/yourusername" 
+                  <a
+                    href="https://linkedin.com/in/yourusername"
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="mailto:your.email@example.com" 
+                  <a
+                    href="mailto:your.email@example.com"
                     className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-md transition-all duration-300"
                   >
                     <Mail className="w-5 h-5" />
@@ -523,8 +606,8 @@ export default function PersonalWebsite() {
                     <label className="block text-sm font-medium text-slate-700 mb-2">
                       First Name
                     </label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="John"
                     />
@@ -533,8 +616,8 @@ export default function PersonalWebsite() {
                     <label className="block text-sm font-medium text-slate-700 mb-2">
                       Last Name
                     </label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Doe"
                     />
@@ -544,8 +627,8 @@ export default function PersonalWebsite() {
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     Email
                   </label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="john@example.com"
                   />
@@ -554,7 +637,7 @@ export default function PersonalWebsite() {
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     Message
                   </label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your message here..."
