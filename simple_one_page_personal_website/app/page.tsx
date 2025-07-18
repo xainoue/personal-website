@@ -24,10 +24,6 @@ import {
   Calendar,
   Users,
   Trophy,
-  Code,
-  Database,
-  Palette,
-  Globe,
 } from "lucide-react";
 import {
   firstName,
@@ -53,6 +49,9 @@ import {
   goalsText,
   goalsTitle,
 } from "@/data/about";
+import { skills } from "@/data/skills";
+import { experiences } from "@/data/experiences";
+import { projects } from "@/data/projects";
 
 export default function PersonalWebsite() {
   const [scrollY, setScrollY] = useState(0);
@@ -101,7 +100,7 @@ export default function PersonalWebsite() {
               <div className="space-y-4">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
                   <Star className="w-4 h-4 mr-2" />
-                  Available for new opportunities
+                  {personalSlogan}
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
                   Hi, I'm{" "}
@@ -122,13 +121,15 @@ export default function PersonalWebsite() {
                 >
                   View My Work <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-slate-300 hover:bg-slate-50"
-                >
-                  <Download className="mr-2 w-4 h-4" /> Download Resume
-                </Button>
+                <a href="/resume.pdf" download>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-slate-300 hover:bg-slate-50"
+                  >
+                    <Download className="mr-2 w-4 h-4" /> Download Resume
+                  </Button>
+                </a>
               </div>
 
               <div className="flex items-center space-x-6 pt-4">
@@ -235,44 +236,7 @@ export default function PersonalWebsite() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Project Name 1",
-                description:
-                  "A comprehensive description of your amazing project, highlighting the key features, technologies used, and the impact it made.",
-                image: "🚀",
-                tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-                github: "https://github.com/yourusername/project1",
-                live: "https://project1.vercel.app",
-              },
-              {
-                title: "Project Name 2",
-                description:
-                  "Another fantastic project that demonstrates your skills and creativity. Explain the challenges you faced and how you solved them.",
-                image: "🎨",
-                tags: ["Python", "Machine Learning", "TensorFlow", "API"],
-                github: "https://github.com/yourusername/project2",
-                live: "https://project2.vercel.app",
-              },
-              {
-                title: "Project Name 3",
-                description:
-                  "A third project showcasing different aspects of your expertise. This could be a mobile app, web application, or any other type of project.",
-                image: "📱",
-                tags: ["Vue.js", "Node.js", "MongoDB", "Express"],
-                github: "https://github.com/yourusername/project3",
-                live: "https://project3.vercel.app",
-              },
-              {
-                title: "Project Name 4",
-                description:
-                  "Your fourth featured project. Remember to include metrics and results where possible to show the impact of your work.",
-                image: "💡",
-                tags: ["Flutter", "Dart", "Firebase", "API Integration"],
-                github: "https://github.com/yourusername/project4",
-                live: "https://project4.vercel.app",
-              },
-            ].map((project, index) => (
+            {projects.map((project, index) => (
               <Card
                 key={index}
                 className="border-slate-200 hover:shadow-xl transition-all duration-300 group"
@@ -340,44 +304,7 @@ export default function PersonalWebsite() {
           </div>
 
           <div className="space-y-8">
-            {[
-              {
-                company: "Company Name",
-                position: "Your Position",
-                period: "2023 - Present",
-                description:
-                  "Brief description of your role and key responsibilities. Include specific achievements and metrics where possible.",
-                achievements: [
-                  "Increased efficiency by 40% through process optimization",
-                  "Led a team of 5 developers on multiple projects",
-                  "Implemented new technologies that reduced costs by 25%",
-                ],
-              },
-              {
-                company: "Previous Company",
-                position: "Previous Position",
-                period: "2021 - 2023",
-                description:
-                  "Another role description highlighting your growth and contributions to the organization.",
-                achievements: [
-                  "Developed and launched 3 major features",
-                  "Improved user satisfaction scores by 30%",
-                  "Mentored junior developers and interns",
-                ],
-              },
-              {
-                company: "Earlier Company",
-                position: "Earlier Position",
-                period: "2019 - 2021",
-                description:
-                  "Your earlier experience and how it shaped your career path.",
-                achievements: [
-                  "Successfully completed certification in [Technology]",
-                  "Contributed to open-source projects",
-                  "Participated in hackathons and coding competitions",
-                ],
-              },
-            ].map((exp, index) => (
+            {experiences.map((exp, index) => (
               <Card key={index} className="border-slate-200">
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -423,46 +350,7 @@ export default function PersonalWebsite() {
           </div>
 
           <div className="grid lg:grid-cols-4 gap-8">
-            {[
-              {
-                category: "Frontend",
-                icon: <Code className="w-6 h-6" />,
-                skills: [
-                  "React",
-                  "Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Vue.js",
-                ],
-              },
-              {
-                category: "Backend",
-                icon: <Database className="w-6 h-6" />,
-                skills: [
-                  "Node.js",
-                  "Python",
-                  "PostgreSQL",
-                  "MongoDB",
-                  "Express",
-                ],
-              },
-              {
-                category: "Design",
-                icon: <Palette className="w-6 h-6" />,
-                skills: [
-                  "Figma",
-                  "Adobe XD",
-                  "UI/UX Design",
-                  "Prototyping",
-                  "Wireframing",
-                ],
-              },
-              {
-                category: "Tools",
-                icon: <Globe className="w-6 h-6" />,
-                skills: ["Git", "Docker", "AWS", "Vercel", "VS Code"],
-              },
-            ].map((skillGroup, index) => (
+            {skills.map((skillGroup, index) => (
               <Card
                 key={index}
                 className="border-slate-200 hover:shadow-lg transition-all duration-300"
@@ -526,8 +414,8 @@ export default function PersonalWebsite() {
                     engaging format.
                     <strong>
                       {" "}
-                      It can answer some questions about my resume, if you have
-                      any...
+                      It can answer personalized questions about my resume, if
+                      you have any...
                     </strong>
                   </p>
                   <div
