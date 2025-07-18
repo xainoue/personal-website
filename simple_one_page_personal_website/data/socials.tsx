@@ -10,4 +10,4 @@ const orbitviewURL = ""
 const phoneNumber = "" 
 const location = ""
 
-export { githubURL, linkedinURL, emailAddress, orbitviewURL };
+export { githubURL, linkedinURL, emailAddress, orbitviewURL, phoneNumber, location };
