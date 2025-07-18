@@ -581,7 +581,7 @@ export default function PersonalWebsite() {
             <Separator className="my-6 bg-slate-700" />
             <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
               <p className="text-slate-400 text-sm">
-                © 2024 {firstName} {lastName}. All rights reserved.
+                © 2025 {firstName} {lastName}. All rights reserved.
               </p>
               <p className="text-slate-400 text-sm">
                 Built with Next.js, deployed on Vercel
