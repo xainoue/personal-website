@@ -6,4 +6,8 @@ const emailAddress = "";
 
 const orbitviewURL = ""
 
+// OPTIONAL
+const phoneNumber = "" 
+const location = ""
+
 export { githubURL, linkedinURL, emailAddress, orbitviewURL };
