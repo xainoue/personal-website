@@ -1,5 +1,8 @@
 import { Experience } from "@/app/types/experience";
 
+// Add your experiences here
+
+
 export const experiences: Experience[] = [
   {
     company: "Company Name",

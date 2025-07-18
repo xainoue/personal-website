@@ -1,6 +1,6 @@
-// Enter your projects here
-
 import { Project } from "@/app/types/projects";
+
+// Add your projects here
 
 export const projects: Project[] = [
   {

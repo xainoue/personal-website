@@ -1,3 +1,5 @@
+// Add the information for the "About Me" section
+
 const aboutMeTitle = "About Me";
 const aboutMeText = `I'm a dedicated professional with a passion for innovation 
                 and continuous learning. Here's a glimpse into my journey and what drives me.`;

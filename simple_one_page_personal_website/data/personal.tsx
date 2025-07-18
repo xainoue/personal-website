@@ -1,4 +1,4 @@
-// Enter your personal information here
+// Add your personal information here
 
 const firstName = "First";
 const lastName = "Last";

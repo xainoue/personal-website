@@ -1,4 +1,4 @@
-// Enter your social media profiles here
+// Add your social media profiles here
 
 const githubURL = "";
 const linkedinURL = "";

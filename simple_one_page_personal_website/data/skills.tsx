@@ -1,6 +1,9 @@
 import { SkillList } from "@/app/types/skills";
 import { Code, Database, Palette, Globe } from "lucide-react";
 
+// Add your skills here
+// NOTE: you can also use other libraries for icons (e.g. React Icons)
+
 export const skills: SkillList[] = [
   {
     category: "Frontend",
@@ -9,7 +12,7 @@ export const skills: SkillList[] = [
   },
   {
     category: "Backend",
-    icon: <Database className="w-6 h-6" />,
+    icon: <Database className="w-6 h-6" />, // React.ReactNode
     skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "Express"],
   },
   {
