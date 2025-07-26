@@ -1,10 +1,10 @@
 // Add your personal information here
 
-const firstName = "First";
-const lastName = "Last";
+const firstName = "Cherie";
+const lastName = "Chen";
 const personalSlogan =
   "Building amazing digital experiences, one project at a time.";
-const heroSectionText = `A passionate [Your Title] who loves creating 
+const heroSectionText = `A passionate high school student who loves creating 
                         innovative solutions and building amazing digital 
                         experiences. Specialized in [Your Specialization].`;
 
