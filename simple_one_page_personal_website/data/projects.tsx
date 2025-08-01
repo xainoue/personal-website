@@ -4,39 +4,39 @@ import { Project } from "@/app/types/projects";
 
 export const projects: Project[] = [
   {
-    title: "Project Name 1",
+    title: "Ice cream adventure",
     description:
-      "A comprehensive description of your amazing project, highlighting the key features, technologies used, and the impact it made.",
-    image: "🚀",
-    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/yourusername/project1",
-    live: "https://project1.vercel.app",
+      "A seemingly simple ice cream game about serving customers with a combat/adventure twist. I made this game in 2022 as a project for my middle school computer science class. I used p5.js to make the game.",
+    image: "🍦",
+    tags: ["p5.js"],
+    github: "https://github.com/xainoue/ice-cream-adventure",
+    live: "",
   },
   {
-    title: "Project Name 2",
+    title: "Ice cream game",
     description:
-      "Another fantastic project that demonstrates your skills and creativity. Explain the challenges you faced and how you solved them.",
-    image: "🎨",
-    tags: ["Python", "Machine Learning", "TensorFlow", "API"],
-    github: "https://github.com/yourusername/project2",
-    live: "https://project2.vercel.app",
+      "A simple game about serving customers in an ice cream shop. I made this game recently inspired by the ice cream adventure game I made in 2022, however making it much more simple due to the new programming tools I was learning to work with as well as the new challenges of designing my own assets. I used Python to make the game.",
+    image: "🍧",
+    tags: ["Python", "Cursor"],
+    github: "https://github.com/xainoue/ice-cream-game",
+    live: "",
   },
   {
     title: "Project Name 3",
     description:
       "A third project showcasing different aspects of your expertise. This could be a mobile app, web application, or any other type of project.",
-    image: "📱",
-    tags: ["Vue.js", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com/yourusername/project3",
-    live: "https://project3.vercel.app",
+    image: "file:///Users/cheriec/Downloads/piece1.png",
+    tags: ["IbisPaint"],
+    github: "",
+    live: "",
   },
   {
     title: "Project Name 4",
     description:
       "Your fourth featured project. Remember to include metrics and results where possible to show the impact of your work.",
-    image: "💡",
-    tags: ["Flutter", "Dart", "Firebase", "API Integration"],
-    github: "https://github.com/yourusername/project4",
-    live: "https://project4.vercel.app",
+    image: "file:///Users/cheriec/Downloads/piece2.png",
+    tags: ["IbisPaint"],
+    github: "",
+    live: "",
   },
 ];

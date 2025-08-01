@@ -1,13 +1,13 @@
 // Add the information for the "About Me" section
 
 const aboutMeTitle = "About Me";
-const aboutMeText = `I'm a dedicated professional with a passion for innovation 
+const aboutMeText = `I'm a dedicated student with a passion for innovation 
                 and continuous learning. Here's a glimpse into my journey and what drives me.`;
 
 const backgroundTitle = "Background";
-const backgroundText = `With [X] years of experience in [Your Field], 
+const backgroundText = `With 4 years of experience in technical art, 
                         I've worked on diverse projects ranging from 
-                        [Project Type 1] to [Project Type 2], always 
+                        game development to digital art pieces, always 
                         focusing on delivering exceptional results.`;
 
 const colloborationTitle = "Collaboration";

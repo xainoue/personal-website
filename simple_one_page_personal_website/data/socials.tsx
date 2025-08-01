@@ -1,13 +1,12 @@
 // Add your social media profiles here
 
-const githubURL = "";
-const linkedinURL = "";
-const emailAddress = "";
+const githubURL = "https://github.com/xainoue";
+const emailAddress = "cherie.chen2010@gmail.com";
 
-const orbitviewURL = ""
+const orbitviewURL = "https://orbitview.net/profile/cheriechen"
 
 // OPTIONAL
-const phoneNumber = "" 
-const location = ""
+const phoneNumber = "929-667-0501" 
+const location = "New York, NY"
 
-export { githubURL, linkedinURL, emailAddress, orbitviewURL, phoneNumber, location };
+export { githubURL, emailAddress, orbitviewURL, phoneNumber, location };

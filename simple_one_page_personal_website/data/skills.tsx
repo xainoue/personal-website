@@ -8,21 +8,21 @@ export const skills: SkillList[] = [
   {
     category: "Frontend",
     icon: <Code className="w-6 h-6" />,
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
+    skills: ["Next.js", "Python", "p5.js", "Cursor"],
   },
   {
     category: "Backend",
     icon: <Database className="w-6 h-6" />, // React.ReactNode
-    skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "Express"],
+    skills: ["Node.js", "JavaScript"],
   },
   {
     category: "Design",
     icon: <Palette className="w-6 h-6" />,
-    skills: ["Figma", "Adobe XD", "UI/UX Design", "Prototyping", "Wireframing"],
+    skills: ["Krita", "Blender", "Clip Studio Paint",],
   },
   {
     category: "Tools",
     icon: <Globe className="w-6 h-6" />,
-    skills: ["Git", "Docker", "AWS", "Vercel", "VS Code"],
+    skills: ["Git", "Vercel", "VS Code"],
   },
 ];
