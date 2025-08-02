@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "An art piece I made in IbisPaint depicting a close up portrait of a person. I used this piece to study color and values by not directly color picking from a reference.",
     image: "🎨",
     tags: ["IbisPaint"],
-    github: "",
+    github: "https://github.com/xainoue/still-life",
     live: "file:///Users/cheriec/Downloads/piece1.png",
   },
   {
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "Another art piece I made in IbisPaint, a still life that I worked on to study the shapes and values of various still objects in a reference photo.",
     image: "🖼️",
     tags: ["IbisPaint"],
-    github: "",
+    github: "https://github.com/xainoue/still-life",
     live: "file:///Users/cheriec/Downloads/piece2.png",
   },
 ];
