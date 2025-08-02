@@ -22,21 +22,21 @@ export const projects: Project[] = [
     live: "",
   },
   {
-    title: "Project Name 3",
+    title: "Portrait",
     description:
-      "A third project showcasing different aspects of your expertise. This could be a mobile app, web application, or any other type of project.",
-    image: "file:///Users/cheriec/Downloads/piece1.png",
+      "An art piece I made in IbisPaint depicting a close up portrait of a person. I used this piece to study color and values by not directly color picking from a reference.",
+    image: "🎨",
     tags: ["IbisPaint"],
     github: "",
-    live: "",
+    live: "file:///Users/cheriec/Downloads/piece1.png",
   },
   {
-    title: "Project Name 4",
+    title: "Still life",
     description:
-      "Your fourth featured project. Remember to include metrics and results where possible to show the impact of your work.",
-    image: "file:///Users/cheriec/Downloads/piece2.png",
+      "Another art piece I made in IbisPaint, a still life that I worked on to study the shapes and values of various still objects in a reference photo.",
+    image: "🖼️",
     tags: ["IbisPaint"],
     github: "",
-    live: "",
+    live: "file:///Users/cheriec/Downloads/piece2.png",
   },
 ];
