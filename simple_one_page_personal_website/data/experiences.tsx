@@ -5,38 +5,32 @@ import { Experience } from "@/app/types/experience";
 
 export const experiences: Experience[] = [
   {
-    company: "Company Name",
-    position: "Your Position",
-    period: "2023 - Present",
+    company: "Stuyvesant High School",
+    position: "Student",
+    period: "2025 - Present",
     description:
-      "Brief description of your role and key responsibilities. Include specific achievements and metrics where possible.",
+      "I will be a student at Stuyvesant High School beginning this upcoming school year. I am a sophomore transfer.",
     achievements: [
-      "Increased efficiency by 40% through process optimization",
-      "Led a team of 5 developers on multiple projects",
-      "Implemented new technologies that reduced costs by 25%",
+      ""
     ],
   },
   {
-    company: "Previous Company",
-    position: "Previous Position",
-    period: "2021 - 2023",
+    company: "Brooklyn Technical High School",
+    position: "Student",
+    period: "2024 - 2025",
     description:
-      "Another role description highlighting your growth and contributions to the organization.",
+      "I was a student at Brooklyn Technical High School starting from 2024 until I transferred out.",
     achievements: [
-      "Developed and launched 3 major features",
-      "Improved user satisfaction scores by 30%",
-      "Mentored junior developers and interns",
+      ""
     ],
   },
   {
-    company: "Earlier Company",
-    position: "Earlier Position",
-    period: "2019 - 2021",
-    description: "Your earlier experience and how it shaped your career path.",
+    company: "NEST+m",
+    position: "Student",
+    period: "2015 - 2024",
+    description: "I was a student at NEST+m, a k-12 school from 2015-2024, elementary to middle school.",
     achievements: [
-      "Successfully completed certification in [Technology]",
-      "Contributed to open-source projects",
-      "Participated in hackathons and coding competitions",
+      ""
     ],
   },
 ];
