@@ -1,8 +1,8 @@
 // Add your social media profiles here
 
 const githubURL = "https://github.com/xainoue";
+const linkedinURL = "https://www.linkedin.com";
 const emailAddress = "cherie.chen2010@gmail.com";
-
 const orbitviewURL = "https://orbitview.net/profile/cheriechen"
 
 // OPTIONAL
