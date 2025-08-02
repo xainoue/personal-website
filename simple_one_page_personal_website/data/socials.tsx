@@ -9,4 +9,4 @@ const orbitviewURL = "https://orbitview.net/profile/cheriechen"
 const phoneNumber = "929-667-0501" 
 const location = "New York, NY"
 
-export { githubURL, emailAddress, orbitviewURL, phoneNumber, location };
+export { githubURL, linkedinURL, emailAddress, orbitviewURL, phoneNumber, location };
